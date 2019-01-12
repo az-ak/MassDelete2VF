@@ -1,0 +1,14 @@
+<apex:page standardController="TestObj1__c" extensions="MassDeleteExtension2" recordSetVar="sobjects" lightningStylesheets="true">
+    <apex:form >
+        <apex:pageBlock title="以下の {!mySelectedSize} レコードを削除しますか?" mode="edit">
+            <apex:pageMessages />
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="削除" action="{!deleteRecords}"/>
+                <apex:commandButton value="キャンセル" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!selected}" var="obj">
+                <apex:column value="{!obj.name}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
